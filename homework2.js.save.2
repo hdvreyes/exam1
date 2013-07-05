@@ -1,0 +1,33 @@
+#!/usr/bin/env node
+
+var chkForPrime = function(n){
+
+	if(n < 2) return false;
+
+	for(var p = 2; p <= n; p++){
+		if(n%p == 0)
+		{
+		   return false;
+		}
+	}
+	return true;
+}
+
+var loopNum = function(){
+	var i = 1;
+	var arr = [];
+	for(i=1; i < 10; i++){
+		if(chkForPrime(i))
+		{
+			arr.push(chkForPrime(i))
+	;
+	}
+	
+}
+var fmt = function(arr){
+	return arr.join(" ");
+}
+
+var k = 6;
+console.log("loopNum(" + k + ")");
+console.log(fmt(loopNum(k)));

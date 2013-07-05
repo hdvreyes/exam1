@@ -1,32 +1,32 @@
 #!/usr/bin/env node
+var fs = require('fs');
 
 var chkForPrime = function(n){
-
-	if(n < 2){ return 0 };
-
-	for(var p=2; p <= n; p++){
-		if(n%p == 0)
-		{
-		   return 0;
-		}
+	if(n < 2){ return false; }
+	for(var p = 2; p < n; p++){
+		if(n%p == 0){
+			return false;
+		}			
 	}
-	return 1;
-
-}
+	return n;
+};
 
 var loopNum = function(){
-	var i = 1;
 	var arr = [];
-	for(i=1; i < 10; i++){
-		if(chkForPrime(i) == 1)
+	for(var i = 1; i < 8; i++){
+		if(chkForPrime(i))
 		{
 			arr.push(chkForPrime(i));
 		}
 	}
-	
+	return arr;
+};
+
+var fmt = function(arr){
+	return arr.join(", ");
 }
 
-
-var k = 6;
-console.log(loopNum());
+var outfile = "homework2.txt";
+fs.writeFileSync(outfile, fmt(loopNum()));
+console.log(fmt(loopNum()));
 
