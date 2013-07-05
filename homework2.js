@@ -13,7 +13,7 @@ var chkForPrime = function(n){
 
 var loopNum = function(){
 	var arr = [];
-	for(var i = 1; i < 8; i++){
+	for(var i = 1; i < 200; i++){
 		if(chkForPrime(i))
 		{
 			arr.push(chkForPrime(i));
