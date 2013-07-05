@@ -13,7 +13,7 @@ var chkForPrime = function(n){
 
 var loopNum = function(){
 	var arr = [];
-	for(var i = 1; i < 200; i++){
+	for(var i = 1; i < 550; i++){
 		if(chkForPrime(i))
 		{
 			arr.push(chkForPrime(i));
@@ -28,5 +28,5 @@ var fmt = function(arr){
 
 var outfile = "homework2.txt";
 fs.writeFileSync(outfile, fmt(loopNum()));
-console.log(fmt(loopNum()));
+console.log(fmt(loopNum()) + "-" + loopNum().length);
 
